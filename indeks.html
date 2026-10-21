@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Pengaturan dasar halaman website -->
+    <meta charset="UTF-8">
+
+    <!-- Agar tampilan menyesuaikan ukuran layar HP, tablet, dan komputer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Deskripsi website untuk mesin pencari -->
+    <meta
+        name="description"
+        content="MenuKita adalah website menu digital yang memudahkan pelanggan melihat menu makanan dan minuman kafe."
+    >
+
+    <!-- Judul yang tampil pada tab browser -->
+    <title>MenuKita | Menu Digital Kafe</title>
+
+    <!-- Menghubungkan file CSS untuk mengatur tampilan website -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- =========================================
+         1. HEADER: Logo dan navigasi website
+         ========================================= -->
+    <header class="site-header">
+        <div class="container header-content">
+
+            <!-- Nama dan identitas website -->
+            <a href="#beranda" class="logo" aria-label="MenuKita, halaman beranda">
+                <span class="logo-icon" aria-hidden="true">☕</span>
+                <span>MenuKita</span>
+            </a>
+
+            <!-- Navigasi menuju bagian tertentu di halaman -->
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <a href="#beranda">Beranda</a>
+                <a href="#menu">Daftar Menu</a>
+                <a href="#tentang">Tentang Kami</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================================
+         2. MAIN: Konten utama website
+         ========================================= -->
+    <main>
+
+        <!-- BAGIAN BERANDA / HERO -->
+        <section id="beranda" class="hero">
+            <div class="container hero-content">
+
+                <!-- Teks pengenalan website -->
+                <p class="hero-label">MENU DIGITAL KAFE</p>
+
+                <h1>
+                    Temukan Menu Favoritmu
+                    <span>dengan Lebih Mudah</span>
+                </h1>
+
+                <p class="hero-description">
+                    Jelajahi berbagai pilihan makanan dan minuman
+                    tanpa perlu menunggu buku menu.
+                </p>
+
+                <!-- Tombol untuk menuju daftar menu -->
+                <a href="#menu" class="button button-primary">
+                    Lihat Daftar Menu
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             3. BAGIAN MENU DAN PENCARIAN
+             ========================================= -->
+        <section id="menu" class="menu-section">
+            <div class="container">
+
+                <!-- Judul bagian menu -->
+                <div class="section-heading">
+                    <p class="section-label">PILIHAN KAMI</p>
+                    <h2>Daftar Menu</h2>
+                    <p>
+                        Temukan makanan dan minuman yang sesuai
+                        dengan seleramu.
+                    </p>
+                </div>
+
+
+                <!-- Kolom untuk mencari menu berdasarkan nama -->
+                <div class="menu-search">
+                    <label for="search-input">
+                        Cari makanan atau minuman
+                    </label>
+
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Contoh: nasi goreng, kopi..."
+                        autocomplete="off"
+                    >
+                </div>
+
+
+                <!--
+                    Tombol kategori.
+                    Nilai data-category akan dibaca oleh JavaScript
+                    untuk menentukan kategori menu yang ditampilkan.
+                -->
+                <div class="category-filters" aria-label="Filter kategori">
+
+                    <button
+                        type="button"
+                        class="category-button active"
+                        data-category="semua"
+                        aria-pressed="true"
+                    >
+                        Semua Menu
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="makanan"
+                        aria-pressed="false"
+                    >
+                        Makanan
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="minuman"
+                        aria-pressed="false"
+                    >
+                        Minuman
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-button"
+                        data-category="camilan"
+                        aria-pressed="false"
+                    >
+                        Camilan
+                    </button>
+
+                </div>
+
+
+                <!--
+                    Area hasil pencarian dan daftar produk.
+                    JavaScript akan membuat kartu menu di dalam
+                    elemen dengan id="menu-list".
+                -->
+                <div
+                    id="menu-list"
+                    class="menu-grid"
+                    aria-live="polite"
+                >
+                    <!-- Kartu menu dibuat secara dinamis oleh script.js -->
+                </div>
+
+
+                <!--
+                    Pesan ini ditampilkan jika tidak ada menu
+                    yang cocok dengan pencarian atau kategori.
+                -->
+                <p id="empty-message" class="empty-message" hidden>
+                    Menu tidak ditemukan. Coba kata kunci lain.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             4. BAGIAN INFORMASI TENTANG MENUKITA
+             ========================================= -->
+        <section id="tentang" class="about-section">
+            <div class="container about-content">
+
+                <p class="section-label">TENTANG KAMI</p>
+
+                <h2>Menu Digital untuk Semua</h2>
+
+                <p>
+                    MenuKita adalah proyek sosial yang membantu kafe
+                    dan restoran menyediakan informasi menu secara
+                    digital. Pelanggan dapat melihat nama produk,
+                    harga, foto, dan ketersediaan menu melalui ponsel.
+                </p>
+
+                <p>
+                    Dengan menu digital, usaha kuliner dapat mengurangi
+                    ketergantungan pada buku menu fisik dan mempermudah
+                    penyampaian informasi kepada pelanggan.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         5. FOOTER: Informasi bagian bawah website
+         ========================================= -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <p>
+                &copy; <span id="current-year">2026</span> MenuKita.
+                Dibuat untuk mendukung digitalisasi usaha kuliner lokal.
+            </p>
+
+            <p class="footer-note">
+                Harga dan ketersediaan menu mengikuti informasi
+                dari pihak kafe.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!--
+        Memanggil JavaScript setelah elemen HTML selesai dibaca.
+        File ini mengatur pencarian, filter kategori, kartu menu,
+        status ketersediaan, dan tahun pada footer.
+    -->
+    <script src="script.js"></script>
+
+</body>
+</html>
