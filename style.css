@@ -1,0 +1,460 @@
+/* =========================================
+   1. PENGATURAN DASAR
+   ========================================= */
+
+/* Membuat ukuran elemen lebih mudah diatur */
+* {
+    box-sizing: border-box;
+}
+
+/* Mengatur perpindahan halaman saat tautan diklik */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Gaya dasar seluruh halaman */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #24332b;
+    background-color: #fffdf8;
+}
+
+/* Mengatur lebar konten agar rapi di tengah */
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* Warna tautan mengikuti desain website */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Gaya dasar tombol dan kolom input */
+button,
+input {
+    font: inherit;
+}
+
+/* Memperjelas fokus saat pengguna memakai keyboard */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #e3a84b;
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   2. HEADER DAN NAVIGASI
+   ========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fffdf8;
+    border-bottom: 1px solid #e9e6dc;
+}
+
+.header-content {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #236347;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.main-nav a {
+    color: #46534b;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.main-nav a:hover {
+    color: #236347;
+}
+
+
+/* =========================================
+   3. BAGIAN BERANDA / HERO
+   ========================================= */
+
+.hero {
+    padding: 88px 0;
+    background: linear-gradient(135deg, #f3f4e8, #fff5e5);
+}
+
+.hero-content {
+    max-width: 760px;
+    text-align: center;
+}
+
+.hero-label,
+.section-label {
+    margin: 0 0 10px;
+    color: #347653;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 0;
+    color: #203d2d;
+    font-size: clamp(2.1rem, 5vw, 3.7rem);
+    line-height: 1.15;
+}
+
+.hero h1 span {
+    display: block;
+    color: #347653;
+}
+
+.hero-description {
+    max-width: 590px;
+    margin: 20px auto 28px;
+    color: #59655d;
+    font-size: 1.05rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-primary {
+    color: white;
+    background-color: #28734d;
+}
+
+.button-primary:hover {
+    background-color: #1d5b3b;
+}
+
+
+/* =========================================
+   4. BAGIAN DAFTAR MENU
+   ========================================= */
+
+.menu-section {
+    padding: 72px 0;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-heading h2,
+.about-content h2 {
+    margin: 0 0 10px;
+    color: #203d2d;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+    margin: 0;
+    color: #69736b;
+}
+
+
+/* Kolom pencarian */
+.menu-search {
+    max-width: 620px;
+    margin: 0 auto 22px;
+}
+
+.menu-search label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.menu-search input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 15px;
+    border: 1px solid #d8ddd5;
+    border-radius: 10px;
+    color: #24332b;
+    background-color: #ffffff;
+}
+
+.menu-search input::placeholder {
+    color: #8b938d;
+}
+
+.menu-search input:focus {
+    border-color: #347653;
+}
+
+
+/* Tombol filter kategori */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.category-button {
+    padding: 9px 17px;
+    border: 1px solid #d7dfd5;
+    border-radius: 999px;
+    color: #405046;
+    background-color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.category-button:hover {
+    border-color: #347653;
+}
+
+.category-button.active {
+    border-color: #28734d;
+    color: #ffffff;
+    background-color: #28734d;
+}
+
+
+/* Grid mengatur kartu menu dalam beberapa kolom */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Kartu produk yang dibuat oleh JavaScript */
+.menu-card {
+    overflow: hidden;
+    border: 1px solid #e8e8df;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 18px rgba(31, 55, 38, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 24px rgba(31, 55, 38, 0.1);
+}
+
+/* Foto produk */
+.menu-image {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background-color: #f0eee6;
+}
+
+/* Bagian teks pada kartu menu */
+.menu-card-content {
+    padding: 17px;
+}
+
+.menu-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.menu-card h3 {
+    margin: 0;
+    color: #263c2d;
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.menu-price {
+    flex-shrink: 0;
+    color: #28734d;
+    font-weight: 800;
+}
+
+.menu-description {
+    min-height: 48px;
+    margin: 10px 0 14px;
+    color: #69736b;
+    font-size: 0.92rem;
+}
+
+/* Label kategori dan status produk */
+.menu-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.menu-category {
+    padding: 4px 9px;
+    border-radius: 6px;
+    color: #3e604a;
+    background-color: #edf4ed;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.menu-status {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.menu-status.available {
+    color: #237344;
+}
+
+.menu-status.unavailable {
+    color: #b33d35;
+}
+
+/* Pesan ketika pencarian tidak menemukan hasil */
+.empty-message {
+    padding: 25px 10px;
+    color: #69736b;
+    text-align: center;
+}
+
+
+/* =========================================
+   5. BAGIAN TENTANG MENUKITA
+   ========================================= */
+
+.about-section {
+    padding: 65px 0;
+    background-color: #f3f4e8;
+}
+
+.about-content {
+    max-width: 760px;
+    text-align: center;
+}
+
+.about-content p:not(.section-label) {
+    color: #59655d;
+}
+
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+
+.site-footer {
+    padding: 28px 0;
+    color: #eaf2ec;
+    background-color: #203d2d;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+.footer-note {
+    color: #c4d5c8;
+    font-size: 0.88rem;
+}
+
+
+/* =========================================
+   7. TAMPILAN TABLET DAN PONSEL
+   ========================================= */
+
+/* Pada layar sedang, tampilkan dua kolom menu */
+@media (max-width: 800px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+}
+
+/* Pada layar ponsel, tampilkan satu kolom menu */
+@media (max-width: 560px) {
+    .header-content {
+        padding: 14px 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main-nav a {
+        font-size: 0.88rem;
+    }
+
+    .hero {
+        padding: 58px 0;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+    }
+
+    .menu-section {
+        padding: 52px 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-image {
+        height: 220px;
+    }
+
+    .category-filters {
+        gap: 8px;
+    }
+
+    .category-button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .about-section {
+        padding: 48px 0;
+    }
+}
